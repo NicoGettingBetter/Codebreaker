@@ -1,0 +1,10 @@
+---
+:user_name: joe
+:game_status: win
+:count_of_try: 1
+:is_hint_used: false
+---
+:user_name: nico
+:game_status: win
+:count_of_try: 6
+:is_hint_used: false
