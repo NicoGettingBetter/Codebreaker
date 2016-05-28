@@ -48,11 +48,12 @@ module Codebreaker
     end
 
     def save_result(name)
-      res = {}
-      res[:user_name] = name
-      res[:game_status] = @game_status
-      res[:count_of_try] = @num_of_try
-      res[:is_hint_used] = @is_hint_used
+      res = {
+        user_name: name,
+        game_status: @game_status,
+        count_of_try: @num_of_try,
+        is_hint_used: @is_hint_used
+      }
 
       File.open('../data/results.yml', 'a') {|f| f.write(res.to_yaml) }
     end
@@ -75,16 +76,16 @@ module Codebreaker
     def match_codes user_code
       res = ''
       plus = @secret_code.zip(user_code).delete_if{ |item| item[0] == item[1]}.transpose
-      res += (0..(3 - plus[0].length)).map{'+'}.join
-      plus[0].length.times do 
+      res += '+' * (4 - plus[0].length)
+      plus[0].length.times do
         item = plus[0].pop
         plus[1].delete_at(plus[1].index(item)) if plus[1].include? item
       end
-      res += (0...(4 - res.length - plus[1].length)).map{'-'}.join
+      res += '-' * (4 - res.length - plus[1].length)
     end
 
     def is_right_code? code
-      code.length == 4 && code[/[1-6]+/].length == 4 
+      code.length == 4 && code[/[1-6]{4}/]
     end
   end
 end

@@ -41,10 +41,9 @@ private
 
     def save
       puts 'Do you want to save results(y/n)?'
-      if (gets.chomp == 'y')
-        puts 'Input your name:'
-        @game.save_result(gets.chomp)
-      end
+      return unless gets.chomp == 'y'
+      puts 'Input your name:'
+      @game.save_result(gets.chomp)
     end
 
     def menu

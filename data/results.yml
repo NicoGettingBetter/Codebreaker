@@ -8,3 +8,23 @@
 :game_status: win
 :count_of_try: 6
 :is_hint_used: false
+---
+:user_name: Belfegor
+:game_status: win
+:count_of_try: 5
+:is_hint_used: false
+---
+:user_name: nico
+:game_status: win
+:count_of_try: 14
+:is_hint_used: true
+---
+:user_name: test [5, 2, 4, 6]
+:game_status: win
+:count_of_try: 1
+:is_hint_used: false
+---
+:user_name: nico
+:game_status: win
+:count_of_try: 5
+:is_hint_used: false
