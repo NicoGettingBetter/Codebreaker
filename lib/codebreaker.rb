@@ -75,13 +75,18 @@ module Codebreaker
   private
     def match_codes user_code
       res = ''
-      plus = @secret_code.zip(user_code).delete_if{ |item| item[0] == item[1]}.transpose
-      res += '+' * (4 - plus[0].length)
-      plus[0].length.times do
-        item = plus[0].pop
-        plus[1].delete_at(plus[1].index(item)) if plus[1].include? item
+      code_with_no_plus = @secret_code.zip(user_code).delete_if{ |item| item[0] == item[1]}.transpose
+      res += '+' * (4 - code_with_no_plus[0].length)
+      res += '-' * minus_count(code_with_no_plus)
+    end
+
+    def minus_count(code_with_no_plus)
+      plus_count = 4 - code_with_no_plus[0].length
+      code_with_no_plus[0].length.times do
+        item = code_with_no_plus[0].pop
+        code_with_no_plus[1].delete_at(code_with_no_plus[1].index(item)) if code_with_no_plus[1].include? item
       end
-      res += '-' * (4 - res.length - plus[1].length)
+      4 - plus_count - code_with_no_plus[1].length
     end
 
     def is_right_code? code
