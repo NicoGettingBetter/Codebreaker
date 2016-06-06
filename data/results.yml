@@ -1,0 +1,50 @@
+---
+:user_name: joe
+:game_status: win
+:count_of_try: 1
+:is_hint_used: false
+---
+:user_name: nico
+:game_status: win
+:count_of_try: 6
+:is_hint_used: false
+---
+:user_name: Belfegor
+:game_status: win
+:count_of_try: 5
+:is_hint_used: false
+---
+:user_name: nico
+:game_status: win
+:count_of_try: 14
+:is_hint_used: true
+---
+:user_name: test [5, 2, 4, 6]
+:game_status: win
+:count_of_try: 1
+:is_hint_used: false
+---
+:user_name: nico
+:game_status: win
+:count_of_try: 5
+:is_hint_used: false
+---
+:user_name: test [6, 2, 1, 5]
+:game_status: win
+:count_of_try: 1
+:is_hint_used: false
+---
+:user_name: test [1, 1, 3, 4]
+:game_status: win
+:count_of_try: 1
+:is_hint_used: false
+---
+:user_name: test [3, 3, 1, 1]
+:game_status: win
+:count_of_try: 1
+:is_hint_used: false
+---
+:user_name: test [2, 2, 3, 6]
+:game_status: win
+:count_of_try: 1
+:is_hint_used: false
